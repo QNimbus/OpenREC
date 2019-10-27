@@ -1,0 +1,11 @@
+// Folders
+node_modules
+certs
+
+// Files
+yarn-error.log
+
+// Config folder
+config/*.json
+!config/*.sample.json
+!config/custom-environment-variables.json

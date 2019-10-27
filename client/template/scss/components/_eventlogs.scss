@@ -1,0 +1,250 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the eventlogs component.
+// -----------------------------------------------------------------------------
+
+#eventlogs {
+  margin-top: 2rem;
+  border: $light-color 1px solid;
+  border-radius: 10px;
+  padding: 1rem;
+
+  .eventlogs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .eventlogs-content {
+    display: grid;
+    grid-template-columns: 75px minmax(120px, 1fr) 2fr 80px;
+    grid-template-rows: [header] 3rem;
+    grid-auto-rows: 2rem;
+    gap: 0.5rem 0;
+
+    .text-end {
+      text-align: end;
+    }
+
+    .form {
+      display: contents;
+
+      div.status {
+        padding-right: 2rem;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $secondary-color;
+        color: set-text-color($secondary-color);
+      }
+
+      div.name {
+        background-color: $secondary-color;
+        @include vertical-align;
+      }
+
+      div.description {
+        grid-column: 3 / span 2;
+        background-color: $secondary-color;
+        @include vertical-align;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      .form-group {
+        margin: 0px;
+        padding-right: 0.5rem;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .row.show-details {
+      border: 1px solid black;
+    }
+
+    .row:not(.hidden) {
+      display: contents;
+
+      // Special header styling
+      &.header div {
+        font-weight: bold;
+        border-bottom: $dark-color 1px dotted;
+        margin-bottom: 0.5rem;
+      }
+
+      // Add margin to header row columns except for last column (actions)
+      &.header div:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    .row:not(.header) {
+      > div:first-child() {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      // Last column
+      > div:last-child() {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+
+    .row:not(.header):not(.add):not(.hidden) {
+      // Simulate column gap (to let row:hover work without gaps)
+      > div:not(.status) {
+        padding: 0px 5px;
+        @include vertical-align;
+      }
+
+      // Text overflow ellipsis for 3rd column except for header row
+      > div.description {
+        min-width: 0;
+        * {
+          @include text-overflow-ellipsis;
+        }
+      }
+
+      // Row background color when hovered (except for header)
+      &:hover {
+        & > div {
+          background-color: $light-color;
+        }
+
+        .status .icon {
+          color: $secondary-color;
+        }
+
+        .status.recording .animation > div {
+          @include loader-beacon($color: $secondary-color);
+        }
+
+        .status.playback .animation > div {
+          @include loader-bars($size: 40px, $color: rgba($secondary-color, 0.1));
+        }
+      }
+
+      .status {
+        height: 100%;
+        font-size: 80%;
+        position: relative;
+
+        // Stack icon and animation layer on top of eachother
+        .icon {
+          position: absolute;
+          padding-right: 2rem;
+          z-index: 9;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $primary-color;
+        }
+        .animation {
+          position: absolute;
+          padding-right: 2rem;
+          z-index: 8;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .status.recording {
+        .icon {
+          display: none;
+        }
+        .animation > div {
+          @include loader-beacon($color: $primary-color);
+        }
+      }
+
+      .status.playback {
+        .animation > div {
+          @include loader-bars($size: 40px, $color: rgba($primary-color, 0.1));
+        }
+      }
+
+      .status.none {
+        .icon {
+          color: $light-color;
+        }
+      }
+
+      .actions {
+        position: relative;
+
+        .action-buttons {
+          font-size: 80%;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          height: 100%;
+          padding: 2px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          transition: background-color 0.2s ease;
+
+          border-radius: 5px;
+
+          // Action buttons
+          span {
+            opacity: 0;
+            margin: 0 4px;
+            padding-left: 5px;
+            transition: opacity 0.2s ease, color 0.2s ease;
+
+            // Last 3 buttons are always visible
+            &:nth-last-child(-n + 3) {
+              opacity: 1;
+            }
+
+            &.disabled {
+              display: none;
+            }
+
+            &.inactive {
+              color: lighten($dark-color, 70%);
+            }
+
+            // Hover effect for individual (active) buttons
+            &:not(.inactive):hover {
+              cursor: pointer;
+              color: $secondary-color;
+            }
+          }
+
+          // Hover effect for action buttons section
+          &:hover {
+            @include set-background(white);
+            padding: 0px;
+            border: $light-color 2px solid;
+
+            span {
+              opacity: 1;
+
+              // Last 3 buttons are always visible
+              &:nth-last-child(3) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

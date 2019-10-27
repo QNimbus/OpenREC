@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the eventlog component.
+// -----------------------------------------------------------------------------
+
+#eventlog {
+  margin-top: 2rem;
+  border: $light-color 1px solid;
+  border-radius: 10px;
+  padding: 1rem;
+
+  .eventlog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .eventlog-content {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: [header] 3rem;
+    grid-auto-rows: minmax(1.5rem, max-content);
+    gap: 0.5rem 0;
+
+    .row:not(.hidden) {
+      display: contents;
+
+      // Special header styling
+      &.header div {
+        font-weight: bold;
+        border-bottom: $dark-color 1px dotted;
+        margin-bottom: 0.5rem;
+      }
+
+      // Add margin to header row columns except for last column (actions)
+      &.header div:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    .row:not(.header):not(.hidden) {
+      // Simulate column gap (to let row:hover work without gaps)
+      > div {
+        padding: 0px 5px;
+        @include vertical-align;
+      }
+
+      > .value {
+        display: inline-block;
+        @include text-overflow-ellipsis;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "openHABHost": "OHHOST",
+    "openHABPort": "OHPORT",
+    "mongoURI": "MONGODB",
+    "jwtSecret": "SECRET"
+}

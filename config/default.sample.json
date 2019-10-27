@@ -1,0 +1,6 @@
+{
+    "openHABHost": "myopenhabhost",
+    "openHABPort": 8080,
+    "mongoURI": "mongodb+srv://openrec:openrec@mymongodbinstance.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
+}

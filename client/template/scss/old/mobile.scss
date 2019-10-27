@@ -1,0 +1,135 @@
+// Mobile css
+@import 'config';
+@import 'loader';
+
+// Heading styles (H1 - H6: 2.5rem - 0.8rem font-size, 1.5rem - 0.5rem padding-bottom)
+$base-font-size: 0.8rem;
+$scale-font-size: $base-font-size * 0.51;
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: (($base-font-size * 2.5) - ($i * $scale-font-size - $scale-font-size));
+        padding-bottom: (($base-font-size * 2) - ($i * $scale-font-size - $scale-font-size));
+    }
+}
+
+// General
+body {
+    font-size: $base-font-size;
+}
+
+// Paragraph styles
+p {
+    padding-bottom: $base-font-size;
+}
+
+// Modal
+#modal {
+    .modal-content {
+        width: 80%;
+        max-width: 600px;
+    }
+}
+
+// Container
+.container {
+    max-width: $max-width;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+// Mobile-only
+.hide-sm {
+    display: none;
+}
+
+// Navbar
+.navbar {
+    padding: 0.57rem 0.5rem;
+    > span {
+        &:first-child {
+            flex-shrink: 1;
+        }
+
+        &:last-child {
+            flex-shrink: 2;
+        }
+        margin: 0 0.1rem;
+    }
+
+    a {
+        padding: 0.25rem;
+        margin: 0 0.25rem;
+    }
+}
+
+// Eventlogs & filters
+.eventlogs,
+.filters {
+    padding: 0.25rem 0.25rem;
+    font-size: $base-font-size;
+
+    .row-add {
+        &.active {
+            grid-template-columns: 40px 1fr 60px;
+            height: 3rem;
+        }
+    }
+    .row.active {
+        .row-detail {
+            margin-top: 4px;
+            grid-column: 1/-1;
+            grid-template-columns: 40px auto;
+            font-size: $base-font-size;
+        }
+    }
+}
+
+.eventlogs {
+    .row {
+        font-size: $base-font-size;
+        grid-template-columns: 40px 1fr 140px;
+
+        .status {
+            @include recorder($color: $danger-color, $size: 1px, $height: 8px);
+        }
+
+        .status-idle {
+            @include recorder-static($size: 1px, $height: 8px);
+        }
+
+        .item {
+            padding: 2px;
+        }
+    }
+}
+
+.filters {
+    .row {
+        font-size: $base-font-size;
+        grid-template-columns: auto 140px;
+
+        .item {
+            padding: 2px;
+        }
+    }
+}
+
+// Form
+.form {
+    &-group {
+        padding: 2px;
+    }
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='date'],
+    select,
+    textarea {
+        padding: 0.2rem;
+        font-size: $base-font-size;
+    }
+}

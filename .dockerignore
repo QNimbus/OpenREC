@@ -1,0 +1,12 @@
+// Folders
+node_modules
+certs
+postman
+
+// Files
+yarn-error.log
+.gitignore
+README.md
+config/*.json
+!config/*.sample.json
+!config/custom-environment-variables.json

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/styles/style.min.css" />
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="./assets/styles/mobile.min.css" />
+    <link rel="stylesheet" media="screen and (min-width:1100px)" href="./assets/styles/widescreen.min.css" />
+
+    <script src="https://kit.fontawesome.com/9fd312dd6f.js" crossorigin="anonymous"></script>
+    <title>OpenREC</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div id="modal" class="modal hide">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Modal header</h1>
+            <span class="btn-close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <p>Hello I am a modal</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At quasi corrupti et voluptatem nostrum id sed nesciunt saepe. Deleniti labore molestiae
+              dolor? Error optio nobis labore doloremque consequuntur, voluptatem vel.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <h3>Modal footer</h3>
+          </div>
+        </div>
+      </div>
+      <div id="page" class="no-blur">
+        <nav class="navbar bg-white">
+          <span>
+            <div class="oh_logo"></div>
+            <h2>Open<span class="bold">REC</span></h2>
+          </span>
+          <span>
+            <ul>
+              <li>
+                <a href="filters.html">
+                  <span class="fas fa-sort-amount-down"></span>
+                  <span class="hide-sm"> Filters</span>
+                </a>
+                <a href="eventlogs.html">
+                  <span class="fas fa-tasks"></span>
+                  <span class="hide-sm"> Eventlogs</span>
+                </a>
+                <a href="#">
+                  <span class="fas fa-sign-out-alt"></span>
+                  <span class="hide-sm"> Logout</span>
+                </a>
+              </li>
+            </ul>
+          </span>
+        </nav>
+        <section>
+          <div class="container">
+            <div class="filters">
+              <div class="filters-header">
+                <h3 class="text-primary p-0">Filters</h3>
+                <a href="#" title="Add eventlog">
+                  <span class="fas fa-plus fa-2x add-eventlog rotate"></span>
+                </a>
+              </div>
+              <div class="row">
+                <div class="item">Name</div>
+                <div class="item align-right">Actions</div>
+              </div>
+              <form class="form">
+                <div class="row-add active">
+                  <div class="item"></div>
+                  <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required />
+                  </div>
+                  <div class="action">
+                    <span class="fas fa-check fa-2x"></span>
+                  </div>
+                </div>
+              </form>
+              <div class="row active">
+                <div class="item">Dimmers</div>
+                <div class="action">
+                  <span class="far fa-edit"></span>
+                  <span class="fas fa-times"></span>
+                </div>
+                <div class="row-detail">
+                  <div class="shortcut"></div>
+                  <div class="label">Description</div>
+                  <div class="shortcut"></div>
+                  <div class="detail">Yet another description</div>
+                </div>
+                <div class="row-detail">
+                  <div class="shortcut"></div>
+                  <div class="label">Groups</div>
+                  <div class="shortcut"></div>
+                  <div class="detail">
+                    <select class="js-example-basic-single" name="state">
+                      <option value="AL">Alabama</option>
+                      <option value="WY">Wyoming</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row-detail">
+                  <div class="shortcut"></div>
+                  <div class="label">Filters</div>
+                  <div class="shortcut"></div>
+                  <div class="detail">1</div>
+                </div>
+              </div>
+              <div class="filters-footer"></div>
+            </div>
+          </div>
+        </section>
+        <footer></footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+@import 'loader_vars';
+
+@mixin loader10($size: $loader-size, $color: $loader-color, $duration: $loader-animation-duration, $gap: $loader-gap, $align: $loader-align) {
+    $unique-name: unique-id();
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    position: relative;
+    animation: #{'loader10-'}#{$unique-name} $duration ease alternate infinite;
+    animation-delay: ($duration / 5) * 2;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        animation: #{'loader10-'}#{$unique-name} $duration ease alternate infinite;
+    }
+
+    &::before {
+        left: -($size + $gap);
+        animation-delay: ($duration / 5) * 1;
+    }
+
+    &::after {
+        right: -($size + $gap);
+        animation-delay: ($duration / 5) * 3;
+    }
+
+    @if ($align == center) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @if ($align == middle) {
+        top: 50%;
+        margin: -($size + $size / 2) auto 0;
+    } @else {
+        top: -$size;
+    }
+    @keyframes #{'loader10-'}#{$unique-name} {
+        0% {
+            box-shadow: 0 $size 0 (-$size) $color;
+        }
+
+        100% {
+            box-shadow: 0 $size 0 $color;
+        }
+    }
+}
+
+@mixin recorder($size: $loader-size, $height: $loader-height, $color: $loader-color, $duration: $loader-animation-duration, $gap: $loader-gap, $align: $loader-align) {
+    $unique-name: unique-id();
+    width: $size;
+    height: $height;
+    background: $color;
+    position: relative;
+    animation: #{'recorder-'}#{$unique-name} $duration ease-in-out infinite;
+    animation-delay: ($duration / 5) * 2;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: $size;
+        height: $height;
+        background: $color;
+        animation: #{'recorder-'}#{$unique-name} $duration ease-in-out infinite;
+    }
+
+    &::before {
+        right: $size + $gap;
+        animation-delay: ($duration / 5) * 1;
+    }
+
+    &::after {
+        left: $size + $gap;
+        animation-delay: ($duration / 5) * 3;
+    }
+
+    @if ($align == center) {
+        margin: 0 auto;
+    }
+    @if ($align == middle) {
+        top: 50%;
+        margin: -($size * 2 + $gap) auto 0;
+    }
+    @keyframes #{'recorder-'}#{$unique-name} {
+        0%,
+        100% {
+            box-shadow: 0 0 0 $color, 0 0 0 $color;
+        }
+
+        50% {
+            box-shadow: 0 (-$gap) 0 $color, 0 $gap 0 $color;
+        }
+    }
+}
+
+@mixin recorder-static($size: $loader-size, $height: $loader-height, $color: $loader-color-static, $gap: $loader-gap, $align: $loader-align) {
+    width: $size;
+    height: $height;
+    background: $color;
+    position: relative;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: $size;
+        height: $height;
+        background: $color;
+    }
+
+    &::before {
+        right: $size + $gap;
+    }
+
+    &::after {
+        left: $size + $gap;
+    }
+
+    @if ($align == center) {
+        margin: 0 auto;
+    }
+    @if ($align == middle) {
+        top: 50%;
+        margin: -($size * 2 + $gap) auto 0;
+    }
+}

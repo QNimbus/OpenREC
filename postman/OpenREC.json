@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "af2cfc55-a64c-4145-a6a8-ff82e00dc48e",
+		"name": "OpenREC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Bas van Wetten\",\n\"email\": \"bas@vanwetten.com\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get auth user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5000/api/auth",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log in user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"bas@vanwetten.com\",\n\"password\": \"123456\" }"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/auth",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Eventlogs",
+			"item": [
+				{
+					"name": "Get event logs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5000/api/logs",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get event logs Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:5000/api/logs",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create event log",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhYzczMjRlNGNiY2UwNWY0MzZjYTk2IiwiaWF0IjoxNTcxNjQ5NjM0LCJleHAiOjE1NzUyNDk2MzR9._FIr1-xjq83OYX5DiZLyp03wZXqA1Oj1TDGS2GSHmBg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"TestLog\" }"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/logs",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete event log",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"TestLog\" }"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/logs",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start recording",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"TestLog\" }"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/logs/startRecording",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs",
+								"startRecording"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Play",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"TestLog\" }"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/logs/play",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs",
+								"play"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"TestLog\" }"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/logs/stop",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs",
+								"stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop recording",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"TestLog\" }"
+						},
+						"url": {
+							"raw": "https://localhost:5000/api/logs/stopRecording",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"logs",
+								"stopRecording"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWRhZDg5MGFkZmU0MzAzMzI0ZWIxMjI1IiwiaWF0IjoxNTcxNjUzODk4LCJleHAiOjE1NzUyNTM4OTh9.8BrcOo6GXPmECD80IMPTKHyFyQWTj1TR9qQgTonybBg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/api/status",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

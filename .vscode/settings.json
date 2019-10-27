@@ -1,0 +1,12 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/client/public/assets/styles"
+      // "savePath": "/client/template/dist/assets/styles"
+    }
+  ],
+  "liveSassCompile.settings.generateMap": false
+}

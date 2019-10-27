@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/styles/main.min.css" />
+
+    <script src="https://kit.fontawesome.com/9fd312dd6f.js" crossorigin="anonymous"></script>
+    <title>OpenREC</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div id="modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Modal header</h1>
+            <span class="btn-close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <p>Hello I am a modal</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At quasi corrupti et voluptatem nostrum id sed nesciunt saepe. Deleniti labore molestiae
+              dolor? Error optio nobis labore doloremque consequuntur, voluptatem vel.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <h3>Modal footer</h3>
+          </div>
+        </div>
+      </div>
+      <div id="page" class="no-blur">
+        <nav id="navbar">
+          <div class="nav-logo">
+            <img src="./assets/images/openhab_logo.png" />
+            <h1>Open<span class="bold">REC</span></h1>
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li>
+                <a class="btn" href="filters.html">
+                  <span class="fas fa-sort-amount-down"></span>
+                  <span class="hide-sm"> Filters</span>
+                </a>
+              </li>
+              <li>
+                <a class="btn" href="eventlogs.html">
+                  <span class="fas fa-tasks"></span>
+                  <span class="hide-sm"> Eventlogs</span>
+                </a>
+              </li>
+              <li>
+                <a class="btn" href="#">
+                  <span class="fas fa-sign-out-alt"></span>
+                  <span class="hide-sm"> Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <section>
+          <div class="container">
+            <div id="eventlog">
+              <div class="eventlog-header">
+                <h3 class="text-primary p-0">My eventlog</h3>
+              </div>
+              <div class="eventlog-content">
+                <div class="row header">
+                  <div>Property</div>
+                  <div>Value</div>
+                </div>
+                <div class="row">
+                  <div>Description</div>
+                  <div class="value">Description of eventlog</div>
+                </div>
+                <div class="row">
+                  <div>Start</div>
+                  <div class="value">25-11-2019 19:22:00</div>
+                </div>
+                <div class="row">
+                  <div>End</div>
+                  <div class="value">25-11-2019 21:03:00</div>
+                </div>
+                <div class="row">
+                  <div>Duration</div>
+                  <div class="value">1:41:00</div>
+                </div>
+                <div class="row">
+                  <div>Events</div>
+                  <div class="value"><span class="pill">8</span></div>
+                </div>
+              </div>
+              <div class="eventlog-footer"></div>
+            </div>
+          </div>
+        </section>
+        <footer></footer>
+      </div>
+    </div>
+  </body>
+</html>
